@@ -24,5 +24,7 @@ class vec:
 			return vec(*[self.coords[i]*other for i in range(len(self.coords))])
 	def __xor__(self, other): # Cross product
 		return vec(self.coords[1]*other.coords[2]-self.coords[2]*other.coords[1],
-				   self.coords[2]*other.coords[0]-self.coords[0]*other.coords[2],
-				   self.coords[0]*other.coords[1]-self.coords[1]*other.coords[0])
+			   self.coords[2]*other.coords[0]-self.coords[0]*other.coords[2],
+			   self.coords[0]*other.coords[1]-self.coords[1]*other.coords[0])
+	def __truediv__(self, other): # Scalar division
+		return vec(*[self.coords[i]/other for i in range(len(self.coords))])
